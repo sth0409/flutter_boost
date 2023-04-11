@@ -273,7 +273,8 @@ public class FlutterBoostPlugin implements FlutterPlugin, NativeRouterApi, Activ
             });
 
             // The scheduling frames are resumed when [onForeground] is called.
-            changeFlutterAppLifecycle(FLUTTER_APP_STATE_RESUMED);
+//             修改
+//             changeFlutterAppLifecycle(FLUTTER_APP_STATE_RESUMED);
         } else {
             throw new RuntimeException("FlutterBoostPlugin might *NOT* have attached to engine yet!");
         }
@@ -288,7 +289,8 @@ public class FlutterBoostPlugin implements FlutterPlugin, NativeRouterApi, Activ
             });
 
             // The scheduling frames are paused when [onBackground] is called.
-            changeFlutterAppLifecycle(FLUTTER_APP_STATE_PAUSED);
+            //修改
+            //changeFlutterAppLifecycle(FLUTTER_APP_STATE_PAUSED);
         } else {
             throw new RuntimeException("FlutterBoostPlugin might *NOT* have attached to engine yet!");
         }
@@ -325,7 +327,8 @@ public class FlutterBoostPlugin implements FlutterPlugin, NativeRouterApi, Activ
         if (DEBUG) Log.v(TAG, "#onContainerCreated: " + container.getUniqueId());
         FlutterContainerManager.instance().addContainer(container.getUniqueId(), container);
         if (FlutterContainerManager.instance().getContainerSize() == 1) {
-           changeFlutterAppLifecycle(FLUTTER_APP_STATE_RESUMED);
+//             修改
+//            changeFlutterAppLifecycle(FLUTTER_APP_STATE_RESUMED);
         }
     }
 
@@ -353,7 +356,8 @@ public class FlutterBoostPlugin implements FlutterPlugin, NativeRouterApi, Activ
         removeRoute(uniqueId, reply -> {});
         FlutterContainerManager.instance().removeContainer(uniqueId);
         if (FlutterContainerManager.instance().getContainerSize() == 0) {
-            changeFlutterAppLifecycle(FLUTTER_APP_STATE_PAUSED);
+//             修改
+//             changeFlutterAppLifecycle(FLUTTER_APP_STATE_PAUSED);
         }
     }
 
