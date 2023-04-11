@@ -193,8 +193,9 @@
     if(listeners == nil){
         listeners = [[NSMutableArray alloc] init];
         self.listenersTable[key] = listeners;
+    }else{
+        [listeners removeAllObjects];
     }
-
     [listeners addObject:listener];
 
     return ^{
